@@ -5,7 +5,7 @@ output:
     df_print: paged
 theme: sandstone
 params: 
-    arquivo_dados: "data/sdsu .csv"
+    arquivo_dados: "data/abington .csv"
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
@@ -66,9 +66,8 @@ iat %>%
 ```{r}
 iat %>% 
     group_by(sex) %>% 
-    summarise(media = mean(d_art))
+    summarise(media = mean(d_art), sd = sd(d_art), n = n())
 ```
-
 
 ```{r}
 agrupado = iat %>% 
@@ -146,7 +145,9 @@ grid.arrange(p1, p2, ncol = 2)
 
 ### Conclusão
 
-Em média, as mulheres que participaram do experimento tiveram uma associação implícita (medida pelo IAT) com a matemárica **positiva/negativa** e **fraca/média/forte** (média XXX, desv. padrão YYY, N = ZZZ). Homens tiveram uma associação **positiva/negativa** com a matemática, portanto **maior/menor** que a das mulheres (média , desv. padrão, N = ). Houve portanto uma **grande/considerável/pequena** diferença entre homens e mulheres (diferença das médias XXXX, 95% CI [CCC, DDD]). A partir desta amostra, estimamos que...
+Em média, as mulheres que participaram do experimento tiveram uma associação implícita (medida pelo IAT) com a matemática **positiva** e **média** (média 0.45409043, desv. padrão 0.4670150, N = 24). Homens tiveram uma associação **positiva** com a matemática, portanto **menor** que a das mulheres (média 0.08081511, desv. padrão 0.4622496, N = 53). Houve portanto uma **alta** diferença entre homens e mulheres (diferença das médias -0.3732753, 95% CI [-0.5983056, -0.1621771]). A partir desta amostra, estimamos que...
+
+se o intervalo inclui 0 pode ser q a diferença entre os generos seja 0 (?)
 
 --- 
 *Exemplos de possíveis conclusões para completar*
